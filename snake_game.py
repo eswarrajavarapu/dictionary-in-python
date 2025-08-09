@@ -45,6 +45,11 @@ def check_collisions(snake):
     if y<0 or y>=GAME_HEIGHT:
         print('Game Over')
         return True
+    for body_part in snake.coordinates[1:]:
+        if x == body_part[0] and y == body_part[1]:
+            print('game over')
+            return True
+        
     return False
 def game_over():
     canvas.delete('all')
